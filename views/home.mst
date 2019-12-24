@@ -1,0 +1,20 @@
+{{> header}}
+<div class="tags">
+    {{#tags}}
+        <div class="tag {{class}}"><a href="/?t={{_id}}">{{_id}} ({{count}})</a></div>
+    {{/tags}}
+</div>
+
+{{#posts}}
+    <div class="post">
+        {{#photo}}
+        <img src="/media/{{photo}}" />
+        {{/photo}}
+        <h3><a href="/post/{{slug}}">{{title}}</a></h3>
+        <small>Autor: {{author.name}}</small>
+        <p>{{body}}</p>
+        {{#user}}
+        <a href="/post/{{slug}}/edit">[ editar ]</a>
+        {{/user}}
+    </div>
+{{/posts}}
